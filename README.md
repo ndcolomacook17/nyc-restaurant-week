@@ -16,12 +16,13 @@ Find Michelin-starred restaurants participating in NYC Restaurant Week.
 git clone https://github.com/ndcolomacook17/nyc-restaurant-week.git
 cd nyc-restaurant-week
 
-# Create and activate virtual environment
+# Install with uv (recommended)
+uv sync
+
+# Or with pip
 python -m venv .venv
 source .venv/bin/activate
-
-# Install dependencies
-pip install selenium webdriver-manager requests beautifulsoup4 python-dotenv
+pip install -e .
 ```
 
 ## Usage
@@ -31,7 +32,7 @@ pip install selenium webdriver-manager requests beautifulsoup4 python-dotenv
 Run the CLI to scrape both sources and find matches:
 
 ```bash
-python cli.py
+uv run python cli.py
 ```
 
 This will:

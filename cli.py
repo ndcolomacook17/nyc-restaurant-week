@@ -26,6 +26,11 @@ def run_scraper(script_name, marker):
         text=True
     )
 
+    if result.returncode != 0:
+        print(f"Error running {script_name}:")
+        print(result.stderr)
+        return []
+
     output = result.stdout
     restaurants = []
 

@@ -9,16 +9,16 @@ This is a Python web scraper that finds the intersection between NYC Restaurant 
 ## Commands
 
 ```bash
-# Activate virtual environment
-source .venv/bin/activate
+# Install dependencies
+uv sync
 
 # Run CLI to scrape both sources and find matches (recommended)
-python cli.py
+uv run python cli.py
 
 # Or run scrapers individually:
-python scraper.py              # NYC Restaurant Week (requires Chrome)
-python scrape-michelin.py      # Michelin Guide
-python find-intersection.py    # Find matches from .txt files
+uv run python scraper.py              # NYC Restaurant Week (requires Chrome)
+uv run python scrape-michelin.py      # Michelin Guide
+uv run python find-intersection.py    # Find matches from .txt files
 ```
 
 ## Architecture
@@ -44,4 +44,4 @@ Four scripts:
 
 ## Dependencies
 
-Python 3.13 with packages: selenium, webdriver-manager, requests, beautifulsoup4, python-dotenv
+Python 3.11+ (see pyproject.toml for packages)
